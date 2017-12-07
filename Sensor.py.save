@@ -1,0 +1,27 @@
+import RPi.GPIO as GPIO
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+
+leftmostled=16
+leftlessled=18
+centerled=22
+rightlessled=40
+rightmostled=32
+
+GPIO.setup(leftmostled, GPIO.IN)
+GPIO.setup(leftlessled, GPIO.IN)
+GPIO.setup(centerled,   GPIO.IN)
+GPIO.setup(rightlessled, GPIO.IN)
+GPIO.setup(rightmostled, GPIO.IN)
+
+
+sensor = []
+sensor.append(GPIO.input(leftmostled))
+sensor.append(GPIO.input(leftlessled))
+sensor.append(GPIO.input(centerled))
+sensor.append(GPIO.input(rightlessled))
+sensor.append(GPIO.input(rightmostled))
+
+def get():
+    return sensor
