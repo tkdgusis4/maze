@@ -85,7 +85,7 @@ if __name__ == "__main__":
                 stop()
                 time.sleep(0.2)
                 get()
-                if sensor == [0,0,0,0,1] :
+                if get()[4] == 0:
                     stop()
                     go_forward_any(80)
                     time.sleep(0.1)
@@ -101,12 +101,11 @@ if __name__ == "__main__":
                         get()
                         stop()
                 else :
-                    continue
-                while get()[0] == 0:
-                    leftPointTurn(100,0.1)
-                    stop()
-                    time.sleep(0.1)
-                    get()
+                    while get()[0] == 0:
+                    	leftPointTurn(100,0.1)
+                    	stop()
+                    	time.sleep(0.1)
+                    	get()
                 time.sleep(1)
 
             else:
